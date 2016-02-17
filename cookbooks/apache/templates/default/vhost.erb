@@ -1,0 +1,18 @@
+#vhost remplate file
+
+<VirtualHost *:<%= @port %>  >
+		
+		ServerName <%= @domain %>
+		DocumentRoot <%= @document_root %>
+	
+	<Directory />
+	Options FollowSymLinks
+	Allowoverride None
+	</Directory>
+	<Directory <%= @document_root %>  >
+	Options Indexes FollowSymLinks MultiViews
+	AllowOverride None
+	Order allow,deny
+	allow from all
+	</Directory>
+	</VirtualHost>
